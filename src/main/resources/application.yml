@@ -1,0 +1,23 @@
+##通用数据源配置
+#spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+#spring.datasource.druid.url=jdbc:mysql://192.168.0.120:3306/myorder?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+#spring.datasource.druid.username=root
+#spring.datasource.druid.password=123456
+## JPA 相关配置
+#spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
+#spring.jpa.show-sql=true
+spring:
+  devtools:
+    restart:
+      enabled: false
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.0.120:3306/myorder
+    hikari: # springboot 2.0 整合了hikari ,据说这是目前性能最好的java数据库连接池
+      username: root
+      password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update  # 第一次建表create  后面用update，要不然每次重启都会新建表
+    show-sql: true
+
